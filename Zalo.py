@@ -12,11 +12,10 @@ options = Options()
 options.add_argument("user-data-dir=C:\\Users\\quang\\AppData\\Local\\Google\\Chrome\\User Data")
 options.add_argument('profile-directory='+profile_name)
 driver = webdriver.Chrome(r"C:\Users\quang\Desktop\BDS_Pj\Chotot\chromedriver.exe", options=options)
-# self.driver.get('https://www.bookbub.com/users/sign_in')
+
 
 def autoLogin(paswd):
     driver.get("https://id.zalo.me/account?continue=https%3A%2F%2Fchat.zalo.me%2F")
-# username = WebDriverWait(driver, random.randint(5,10)).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input-phone")))
     username = WebDriverWait(driver, random.randint(5,10)).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#app > div > div.zLogin-layout.parentDisable > div.body > div > div > div > div > div.tabs.animated.fadeIn > ul > li:nth-child(2) > a"))).click()
     time.sleep(random.randint(3,10))
     password = WebDriverWait(driver, random.randint(5,10)).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#app > div > div.zLogin-layout.parentDisable > div.body > div > div > div > div > div.content.animated.fadeIn > div:nth-child(1) > div > div > div > div > div.line-form.has-ico > input[type=password]")))
